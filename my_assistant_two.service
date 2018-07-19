@@ -1,0 +1,13 @@
+[Unit]
+Description=My awesome assistant app
+
+[Service]
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+ExecStart=/bin/bash -c 'python3 -u src/examples/voice/cloudspeech_demo.py'
+WorkingDirectory=/home/pi/AIY-projects-python
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+
